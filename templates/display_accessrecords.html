@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>display_accessrecords</h1>
+        <table border="2" style="background-color: darkgreen;">
+            <tr>
+                <th>name</th>
+                <th>date</th>
+                <th>autor</th>
+                <th>email</th>
+            </tr>
+            {% for ao in QARO %}
+            <tr>
+                <td>{{ao.name}}</td>
+                <td>{{ao.date}}</td>
+                <td>{{ao.author}}</td>
+                <td>{{ao.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
