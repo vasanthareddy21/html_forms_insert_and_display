@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+        <h1>radiobuttons</h1>
+    Topic_name:
+    <br><br>
+    <form action="{% url 'select_and_display' %}" method="POST">
+        {% csrf_token %}
+        {% for to in LTO %}
+        <input type="radio" name="tn" id="tn" value="{{to.Topic_name}}">
+        <label for="tn">{{to.Topic_name}}</label> <br><br>
+        {% endfor %}
+
+        <input type="submit" value="radiobuttons">
+    </form>
+</center>
+</body>
+</html>

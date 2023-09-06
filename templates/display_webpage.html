@@ -10,12 +10,14 @@
         <h1>display_webpage</h1>
         <table border="2" style="background-color: blueviolet;">
             <tr>
+                <th>pk</th>
                 <th>Topic_name</th>
                 <th>name</th>
                 <th>url</th>
             </tr>
-            {% for wo in QLWO %}
+            {% for wo in QSWO %}
             <tr>
+                <td>{{wo.pk}}</td>
                 <td>{{wo.Topic_name}}</td>
                 <td>{{wo.name}}</td>
                 <td>{{wo.url}}</td>
