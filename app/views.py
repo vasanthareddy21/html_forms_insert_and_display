@@ -55,7 +55,6 @@ def select_and_display(request):
         d1={'QSWO':QSWO}
         return render(request,'display_webpage.html',d1)
 
-
     return render(request,'select_and_display.html',d)
 
 def checkbox(request):
@@ -67,6 +66,21 @@ def radiobuttons(request):
     LTO=Topic.objects.all()
     d={'LTO':LTO}
     return render(request,'radiobuttons.html',d)
+#delete
+def select_and_display(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+
+    if request.method=='POST':
+        tnlist=request.POST.getlist('tn')
+        print(tnlist)
+        for tn in tnlist:
+            QSWO=Webpage.objects.filter(Topic_name=tn).delete()
+        QSWO=Webpage.objects.all()
+        d1={'QSWO':QSWO}
+        return render(request,'display_webpage.html',d1)
+
+    return render(request,'select_and_display.html',d)
 
 
 
